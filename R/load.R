@@ -9,6 +9,9 @@
 #' @examples
 #' \dontrun{ }
 read_and_flip <- function(fname) {
+  # bind the NSE names to NULL
+  qname <- tname <- alen <- len <- tstart <- strand <- prop <- flip <- qlen <- qstart <- qend <- qswap <- NULL
+
   paf <- pafr::read_paf(fname)
 
   paf.grouped <- paf |>
