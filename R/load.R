@@ -28,7 +28,7 @@ read_and_flip <- function(fname) {
     dplyr::left_join(paf[, c("qname", "tname", "qstart", "qend", "tstart", "tend", "alen",
                              "strand", "qlen")],
                      by = c("qname", "tname")) |>
-    dplyr::filter(alen > 5e5) |>
+    dplyr::filter(alen > 100000) |>
     dplyr::arrange(tname, tstart) |>
     dplyr::mutate(qname = factor(qname, ordered = TRUE, levels = rev(unique(qname))))
 
